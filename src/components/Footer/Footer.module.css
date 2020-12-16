@@ -1,0 +1,31 @@
+footer {
+    margin-top: 30px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.SocialIcons {
+    margin: 10px;
+}
+
+.SocialIcons i {
+    display: inline-block;
+    margin: 10px;
+}
+
+.SocialIcons a {
+    text-decoration: none;
+}
+
+.ConnectWith {
+    margin-top: 30px;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer a:link, a:visited, a:hover, a:active {
+    color: #121212;
+    font-weight: 600;
+}

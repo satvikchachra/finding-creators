@@ -1,20 +1,152 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap');
+body {
+  font-family: 'JetBrains Mono', monospace;
+  margin: 25px;
 }
 
-.Genre-List {
+.title {
+  font-weight: 800;
+  font-size: 35px;
+}
+
+.genre-list {
   display: flex;
 }
 
-.Genre-List-Item {
-  margin: 10px;
+.genre-list-item {
+  margin: 0 10px;
   padding: 10px;
   width: 80px;
   border: 1px solid #000000;
   cursor: pointer;
 }
 
-.Creator-List-Item {
+.creator-list-item {
   display: block;
   cursor: pointer;
+  margin: 15px 0;
+  padding: 5px 0;
+}
+
+.creator-name {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.creator-description {
+  font-size: 12px;
+}
+
+.section {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.container {
+  margin: 20px 0;
+}
+
+.genre-container {
+  width: 300px;
+  margin: 10px;
+}
+
+.banner-container {
+  width: 100%;
+}
+
+.banner {
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 24px;
+  padding: 10px;
+  margin: 20px;
+}
+
+.list-and-card-container {
+  display: flex;
+  margin: 0px 24px;
+}
+
+.creator-list-container {
+  width: 50%;
+  margin: 0 7px 0 0;
+}
+
+.card-container {
+  width: 50%;
+}
+
+.card {
+  margin: 15px 0;
+  padding: 5px 0;
+}
+
+.creator-img-container, .creator-link-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.creator-link-container {
+  padding: 5px 0;
+  margin: 5px 0;
+  background-color: #000000;
+}
+
+img {
+  height: 130px;
+  width: 136px;
+}
+
+.header {
+  margin: 0 25px;
+}
+
+.genre-list-item-selected {
+  background-color: #f2f3f6;
+}
+
+.creator-list-item-selected {
+  box-shadow: 0px 2px #000;
+}
+
+@media (min-width: 768px) {
+  .list-and-card-container {
+    width: 496px;
+  }
+}
+
+@media (max-width: 426px) {
+  .container {
+    width: 375px;
+  }
+  /* .list-and-card-container{
+    width: 327px;
+  } */
+}
+
+@media (max-width: 376px) {
+  .section {
+    width: 325px;
+  }
+  .container {
+    width: 325px;
+  }
+  .list-and-card-container {
+    width: 272px;
+  }
+}
+
+@media (max-width: 320px) {
+  .header {
+    margin: 0;
+  }
+  .section {
+    width: 270px;
+  }
+  .container {
+    width: 320px;
+  }
 }

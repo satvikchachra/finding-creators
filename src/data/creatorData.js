@@ -32,7 +32,7 @@ export const techChannels = [
     {
         id: 't2',
         gid: 'g0',
-        name: 'take u Forward',
+        name: 'Raj Vikramaditya',
         description: 'Educational content creator. Engineer at Media.net',
         link: 'https://www.youtube.com/channel/UCJskGeByzRRSvmOyZOz61ig',
         pic: techPic2
