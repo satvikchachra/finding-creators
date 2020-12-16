@@ -67,6 +67,7 @@ body {
 .list-and-card-container {
   display: flex;
   margin: 0px 24px;
+  height: 300px;
 }
 
 .creator-list-container {

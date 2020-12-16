@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import Footer from './components/Footer/Footer';
 import { techChannels, brainyChannels, comedyChannels } from './data/creatorData';
 import { genereList } from './data/genreData';
+import Header from './components/Header/Header';
+import GenreList from './components/GenreList/GenreList';
+import Banner from './components/Banner/Banner';
+import CreatorList from './components/CreatorList/CreatorList';
+import CreatorCard from './components/CreatorCard/CreatorCard';
 import './App.css';
 
 const App = () => {
@@ -61,113 +66,36 @@ const App = () => {
     <div className='App'>
 
       <div className='section'>
-        <div className='header'>
-          <div className='title'>Finding Creators</div>
-          <br />
-
-          Checkout my favorite content creators across YouTube.
-          <br /> Select a genre to get started.
-          <br />
-        </div>
+        <Header title='Finding Creators' />
       </div>
 
       <div className='section'>
 
         <div className='container'>
 
-          <div className='genre-container'>
-            <div className='genre-list'>
-              {
-                genereList
-                  .map(genreItem =>
-                    <div
-                      key={genreItem.id}
-                      onClick={() => genreClickHandler(genreItem.id)}
-                      className={getGenreClass(genreItem.id)}>
-                      {genreItem.name}
-                    </div>)
-              }
-            </div>
-          </div>
+          <GenreList
+            clicked={genreClickHandler}
+            styling={getGenreClass}
+            gList={genereList} />
 
-          <div className='banner-container'>
-            <div className='banner'>
-              {genreAndCreator.genreObj.name}.
-            </div>
-            {/* <div className='banner-img-container'>{<img src={genreAndCreator.genreObj.pic} />}</div> */}
-          </div>
+          <Banner genreInfo={genreAndCreator} />
 
           <div className='list-and-card-container'>
-            <div className='creator-list-container'>
-              {
-                creatorsList
-                  .filter(channel => channel.gid === genreAndCreator.genreObj.id)
-                  .map(creator =>
-                    <div key={creator.id}
-                      onClick={() => creatorClickHandler(creator.id)}
-                      className={getCreatorClass(creator.id)}>
-                      <div className='creator-name'>{creator.name}</div>
-                      <div className='creator-description'>{creator.description}</div>
-                      {/* <img src={creator.pic} /> */}
-                    </div>)
-              }
-            </div>
+            <CreatorList
+              clicked={creatorClickHandler}
+              styling={getCreatorClass}
+              genreCreatorInfo={genreAndCreator}
+              cList={creatorsList} />
 
-            <div className='card-container'>
-              <div className='card'>
-                <div className='creator-img-container'>
-                  {<img alt='Creator DP' src={genreAndCreator.creatorObj.pic} />}
-                </div>
-                <div className='creator-link-container'>
-                  <a style={{color: '#ffffff'}} target='_blank' rel='noreferrer' href={genreAndCreator.creatorObj.link}> Visit </a>
-                </div>
-              </div>
-            </div>
+            <CreatorCard creatorInfo={genreAndCreator} />
 
           </div>
-
         </div>
-
       </div>
+
       <div className='section'>
         <Footer />
       </div>
-
-      {/* <br />
-      {genreAndCreator.genreObj.id} {genreAndCreator.creatorObj.id}
-
-      <br />
-
-      <img src={genreAndCreator.genreObj.pic} />
-
-      <img src={genreAndCreator.creatorObj.pic} />
-
-      <div className='Genre-List'>
-        {
-          genereList
-            .map(genreItem =>
-              <div onClick={() => genreClickHandler(genreItem.id)} className='Genre-List-Item'>
-                {genreItem.name}
-                <img src={genreItem.pic} />
-              </div>)
-        }
-      </div>
-
-
-
-      <div className='Creator-List'>
-        {
-          creatorsList
-            .filter(channel => channel.gid === genreAndCreator.genreObj.id)
-            .map(creator =>
-              <div onClick={() => creatorClickHandler(creator.id)} className='Creator-List-Item'>
-                {creator.id}<br />
-                {creator.name}<br />
-                {creator.description}<br />
-                <img src={creator.pic} />
-              </div>)
-        }
-      </div> */}
 
     </div>
   );
