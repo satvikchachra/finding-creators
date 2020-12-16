@@ -1,3 +1,20 @@
 .App {
   text-align: center;
 }
+
+.Genre-List {
+  display: flex;
+}
+
+.Genre-List-Item {
+  margin: 10px;
+  padding: 10px;
+  width: 80px;
+  border: 1px solid #000000;
+  cursor: pointer;
+}
+
+.Creator-List-Item {
+  display: block;
+  cursor: pointer;
+}
